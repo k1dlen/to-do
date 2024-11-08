@@ -1,0 +1,169 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(to right, #6a5acd, #8a2be2);
+    margin: 0;
+    padding: 0;
+}
+
+.todo-container {
+    width: 1440px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.todo-title {
+    font-size: 40px;
+    text-align: center;
+    color: #4b0082;
+}
+
+.input-wrapper {
+    display: flex; /* Используем Flexbox */
+    gap: 10px; /* Промежуток между полем ввода и кнопкой */
+    margin-bottom: 15px; /* Отступ снизу */
+}
+
+.todo-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1; /* Занимает всё доступное пространство */
+}
+
+.todo-add-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6a5acd;
+    color: white;
+    cursor: pointer;
+    flex: 0 0 100px; /* Фиксированная ширина кнопки */
+}
+
+.todo-add-button:hover {
+    background-color: #5a4cbd; /* Цвет при наведении */
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.todo-task {
+    flex-grow: 1;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
+.complete-button, .delete-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.confirm-box {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 300px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.confirm-button, .cancel-button {
+    margin: 10px;
+    padding: 10px;
+}
+
+
+/* Кнопка завершения задачи */
+.complete-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Кнопка для удаления задачи */
+.delete-button {
+    background-color: #ff4b4b;
+    color: #fff;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Стили для текста завершенной задачи */
+.todo-task.completed {
+    text-decoration: line-through;
+    color: #a9a9a9;
+    /* Серый цвет текста для завершенных задач */
+}
+
+/* Стили для завершенной задачи */
+.task-completed {
+    background-color: #e6ffe6;
+    /* Светло-зеленый фон для завершенной задачи */
+    transition: background-color 0.3s;
+    /* Плавный переход */
+}
+
+.confirm-message {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.confirm-button {
+    background-color: #6a0dad;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.cancel-button {
+    background-color: #ff4b4b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
