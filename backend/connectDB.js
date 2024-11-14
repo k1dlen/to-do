@@ -1,33 +1,35 @@
-const mysql = require("mysql2");
+import mysql from "mysql2";
 
-const connection = mysql.createConnection({
+export const connection = mysql.createConnection({
     host: "172.17.1.8",
     user: "root",
     database: "todolist_slo",
     password: "1234"
 });
 
-connection.connect(function (err) {
-    if (err) {
-        return console.error("Ошибка: " + err.message);
-    }
-    else {
-        console.log("Подключение к серверу MySQL успешно установлено");
-    }
-});
-
-connection.query("SELECT * FROM tasks",
-    function (err, results, fields) {
-        console.log(err);
-        console.log(results); // собственно данные
-        console.log(fields); // мета-данные полей 
-    });
+// export function connect() {
+    connection.connect(function (err) {
+        if (err) {
+            return console.error("Ошибка: " + err.message);
+        }
+        else {
+            console.log("Подключение к серверу MySQL успешно установлено");
+        }
+    })
+// };
+// export function select (req, res) {
+// connection.query("SELECT * FROM tasks",
+//     function (err, results) {
+//         if (err) {
+//             console.log(err)
+//             return res.json(err)
+//         }
+//         else return res.json(results);
+//     });
+// }
 
 // const sql_add = "INSERT INTO tasks (input, completed) VALUES(?, ?)";
-// const task = {
-//     input: "",
-//     completed: false,
-// };
+// const task = [" ", false];
 
 // connection.query(sql_add, task, function (err, results) {
 //     if (err) console.log(err);
