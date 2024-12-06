@@ -5,7 +5,10 @@ import { sql_delete } from './controllers/delete.js'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import { connection } from './connectDB.js'
+<<<<<<< HEAD
 import { update } from './controllers/update.js'
+=======
+>>>>>>> 8043a2ee31bdd6a08b0688b37b582f4fa52374d8
 
 const app = express()
 const port = 3000
