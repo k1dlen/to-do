@@ -1,22 +1,14 @@
-<<<<<<< HEAD
 import { arrObj } from "../script.js";
+import { UpdateTask } from "../fetch/updateTask.js";
+import { PatchTask } from "../fetch/patchTask.js";
 
 export function updateTaskStatus(taskText, isCompleted) {
-  const taskIndex = arrObj.findIndex(task => task.input === taskText);
-  if (taskIndex !== -1) {
-    arrObj[taskIndex].completed = isCompleted;
-    // saveToLocalStorage();
-  }
+  console.log(taskText);
+  console.log(isCompleted);
+  const task_id = arrObj.find(task => task.input === taskText).id;
+  PatchTask({
+    id: task_id,
+    completed: isCompleted,
+  })
+  location.reload()
 }
-=======
-import { saveToLocalStorage } from "./saveToLocalStorage.js";
-import { arrObj } from "../script.js";
-
-export function updateTaskStatus(taskText, isCompleted) {
-    const taskIndex = arrObj.findIndex(task => task.input === taskText);
-    if (taskIndex !== -1) {
-      arrObj[taskIndex].completed = isCompleted;
-      saveToLocalStorage();
-    }
-  }
->>>>>>> 8043a2ee31bdd6a08b0688b37b582f4fa52374d8

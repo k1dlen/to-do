@@ -11,7 +11,6 @@ export function update(req, res) {
     const sql_update = "UPDATE tasks SET completed=? WHERE id=?";
     connection.query(sql_update, task,
         function (err, results) {
-
             if (err) console.log(err);
             else console.log("Данные обновлены");
         })

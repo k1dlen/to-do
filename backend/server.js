@@ -5,10 +5,7 @@ import { sql_delete } from './controllers/delete.js'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import { connection } from './connectDB.js'
-<<<<<<< HEAD
 import { update } from './controllers/update.js'
-=======
->>>>>>> 8043a2ee31bdd6a08b0688b37b582f4fa52374d8
 
 const app = express()
 const port = 3000
@@ -20,12 +17,16 @@ app.use(cors())
 
 app.get('/', select)
 app.post("/update", update)
+app.patch("/update", update)
 app.post("/add", add)
 app.post("/delete", sql_delete)
-app.post("/delete/:id", function(req, res){
+app.delete("/delete/:id", function(req, res){
   const id = req.params.id;
+  // const id = req.query.id;
+  console.log(id);
   connection.query("DELETE FROM tasks WHERE id=?", [id], function(err, data) {
-    if(err) return console.log(err);
+    if (err) console.log(err);
+    else console.log("Данные удалены");
     res.redirect("/");
   });
 });

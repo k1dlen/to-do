@@ -1,5 +1,3 @@
-
-
 export function showCustomConfirm(onConfirm) {
     const overlay = document.createElement("div");
     overlay.classList.add("overlay");

@@ -1,5 +1,5 @@
-import { arrObj } from "../script.js";
+// import { arrObj } from "../script.js";
 
-export function saveToLocalStorage() {
-    localStorage.setItem("key", JSON.stringify(arrObj));
-  }
+// export function saveToLocalStorage() {
+//     localStorage.setItem("key", JSON.stringify(arrObj));
+//   }
